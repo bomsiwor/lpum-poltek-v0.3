@@ -2,10 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\StudyProgram;
 use Illuminate\Http\Request;
+use App\Models\User;
 
 class DashboardController extends Controller
 {
+    protected $users;
+
+    public function __construct()
+    {
+        $this->users = new User();
+    }
     public function index()
     {
         $data = [
@@ -16,8 +24,11 @@ class DashboardController extends Controller
 
     public function profile()
     {
+        $study_programs = StudyProgram::all();
+
         $data = [
-            'title' => 'Kelola Profil'
+            'title' => 'Kelola Profil',
+            'study_programs' => $study_programs
         ];
 
         return view('Dashboard.profil', $data);
@@ -34,6 +45,7 @@ class DashboardController extends Controller
 
     public function hasil()
     {
+
         $data = [
             'title' => 'Hasil Pemira'
         ];
@@ -43,8 +55,10 @@ class DashboardController extends Controller
 
     public function manageUser()
     {
+        $all_user = User::all();
         $data = [
-            'title' => 'Kelola User'
+            'title' => 'Kelola User',
+            'users' => $all_user
         ];
 
         return view('Dashboard.manage-user', $data);
