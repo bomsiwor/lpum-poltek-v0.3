@@ -26,7 +26,7 @@
                             Pemilu</span></a>
                 </li>
                 {{-- Profile --}}
-                <li class="sidebar-item">
+                <li class="sidebar-item" id="profileButton">
                     <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ route('profil') }}"
                         aria-expanded="false"><i class="mdi mdi-account-network"></i><span
                             class="hide-menu">Profile</span></a>
@@ -41,7 +41,7 @@
                 <li class="sidebar-item">
                     <form action="/auth/logout" method="post">
                         @csrf
-                        <button class="btn tema-3">Logout!</button>
+                        <button class="btn tema-3" id="logoutButton">Logout!</button>
                     </form>
                 </li>
             </ul>

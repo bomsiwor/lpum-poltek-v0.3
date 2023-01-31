@@ -24,6 +24,7 @@ class CreateAdminUserSeeder extends Seeder
             'nim' => fake()->numberBetween(1234, 9999),
             'study_program_id' => fake()->numberBetween(1, 3),
             'password' => Hash::make("password"),
+            'phone' => "087733547844"
         ]);
 
         $role = Role::create(['name' => 'Admin']);

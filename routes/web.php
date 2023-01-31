@@ -49,4 +49,7 @@ Route::controller(VoteController::class)->prefix('vote')->group(function () {
 
 Route::controller(UserController::class)->prefix('user')->group(function () {
     Route::get('/detail/{user:nim}', 'userDetail')->name('user-detail');
+    Route::put('/user-detail', 'changeDetail')->name('change-user-detail');
+    Route::put('/profile-picture', 'changePicture')->name('change-profile-picture');
+    Route::delete('/profile-picture', 'deletePicture')->name('delete-profile-picture');
 });

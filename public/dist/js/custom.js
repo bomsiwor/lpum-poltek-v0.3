@@ -28,8 +28,11 @@ $(function () {
             window.innerWidth > 0 ? window.innerWidth : this.screen.width;
         if (width < 1170) {
             $("#main-wrapper").attr("data-sidebartype", "mini-sidebar");
+            $("#logoutButton").show();
         } else {
             $("#main-wrapper").attr("data-sidebartype", "full");
+            $("#logoutButton").hide();
+            $("#profileButton").hide();
         }
     };
     $(window).ready(setsidebartype);
@@ -65,10 +68,25 @@ $("#save-profile-button").click(function (e) {
         "Simpan perubahan?",
         "Kamu dapat mengedit ulang detail profilmu kalau mau",
         function () {
+            var form = $("#profileDetail");
+            var url = $("#profileDetail").attr("action");
+
+            $.ajax({
+                type: "POST",
+                url: url,
+                data: form.serialize(),
+                dataType: "json",
+                success: function (response) {
+                    console.log(response);
+                },
+            });
             alertify.success("Sukses edit profil!");
             $(".formProfil").prop("disabled", true);
             $("#edit-profile-button").html("Edit Profil");
             $("#save-profile-button").hide();
+            setTimeout(() => {
+                location.reload();
+            }, 500);
         },
         function () {
             alertify.error("Batal");

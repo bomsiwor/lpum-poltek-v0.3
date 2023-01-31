@@ -182,6 +182,8 @@
         </div>
     </div>
     @include('Layouts.footer')
+
+
     <script>
         $(document).ready(function() {
             $("table").simpleCheckboxTable();

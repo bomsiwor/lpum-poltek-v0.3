@@ -14,21 +14,48 @@
         <!-- ============================================================== -->
         <!-- Start Page Content -->
         <div class="row">
+            @error('photo')
+                <div class="alert alert-danger">
+                    Upload foto gagal <b>Coba lagi!</b>
+                </div>
+            @enderror
+
+            @if (session('status'))
+                <div class="alert alert-success">
+                    {{ session('status') }}
+                </div>
+            @endif
             <!-- Column -->
             <div class="col-lg-4 col-xlg-3 col-md-5">
                 <div class="card shadow-sm">
                     <div class="card-body">
                         <center class="m-t-30">
-                            <img src="{{ asset('assets/images/users/') . '/' . auth()->user()->image }}"
-                                class="rounded-circle" width="150" />
+
+                            @if (!auth()->user()->image)
+                                <img src="{{ asset('assets/images/users/default_profile.png') }}" class="rounded-circle"
+                                    width="150" />
+                            @else
+                                <img src="{{ asset('storage/' . auth()->user()->image) }}" class="avatar" width="250"
+                                    height="250" />
+                            @endif
+
                             <h4 class="card-title m-t-10">{{ auth()->user()->nama }}</h4>
                             <h6 class="card-subtitle">{{ auth()->user()->study_program->nama }}</h6>
                             <div class="row text-center justify-content-center">
+                                @if (auth()->user()->image)
+                                    <div class="col-6">
+                                        <form action="{{ route('delete-profile-picture') }}" method="post">
+                                            @method('DELETE')
+                                            @csrf
+                                            <button class="btn tema-3"
+                                                onclick="return confirm('Hapus fotomu yang cupu itu?');">Hapus
+                                                Foto</button>
+                                        </form>
+                                    </div>
+                                @endif
                                 <div class="col-6">
-                                    <button class="btn tema-3">Hapus Foto</button>
-                                </div>
-                                <div class="col-6">
-                                    <button class="btn tema-2">Ganti foto</button>
+                                    <button class="btn tema-2" data-bs-target="#uploadProfilPict"
+                                        data-bs-toggle="modal">Ganti foto</button>
                                 </div>
                             </div>
                         </center>
@@ -40,9 +67,9 @@
                         <small class="text-muted">Surel</small>
                         <h6>{{ auth()->user()->email }}</h6>
                         <small class="text-muted p-t-30 db">Phone</small>
-                        <h6>+91 654 784 547</h6>
-                        <small class="text-muted p-t-30 db">Address</small>
-                        <h6>71 Pilgrim Avenue Chevy Chase, MD 20815</h6>
+                        <h6>{{ auth()->user()->phone }}</h6>
+                        <small class="text-muted p-t-30 db">Terakhir diupdate</small>
+                        <h6>{{ date('d-m-Y', strtotime(auth()->user()->updated_at)) }}</h6>
                     </div>
                 </div>
             </div>
@@ -62,26 +89,31 @@
                                 <button class="btn tema-2" id="edit-profile-button">
                                     Edit Profil
                                 </button>
-                                <button class="btn tema-2 mx-1" id="save-profile-button">
+                                <button class="btn tema-2 mx-1" type="submit" id="save-profile-button"
+                                    form="#profileDetail">
                                     Simpan
                                 </button>
                             </div>
                         </div>
-                        <form class="form-horizontal form-material mx-2">
+                        <form class="form-horizontal form-material mx-2" method="POST"
+                            action="{{ route('change-user-detail') }}" id="profileDetail">
+                            @method('PUT')
+                            @csrf
                             <!-- Nama lengkap -->
                             <div class="form-group">
                                 <label class="col-md-12">Nama Lengkap</label>
                                 <div class="col-md-12">
                                     <input type="text" placeholder="Nama Lengkap" value="{{ auth()->user()->nama }}"
-                                        class="form-control form-control-line formProfil" disabled />
+                                        class="form-control form-control-line formProfil" name="nama" disabled />
                                 </div>
                             </div>
                             <!-- Prodi -->
                             <div class="form-group">
                                 <label class="col-md-12">Prodi</label>
                                 <div class="col-md-12">
-                                    <select class="form-select formProfil" aria-label="Pilih Prodi" disabled>
-                                        <option selected>Pilih Prodi</option>
+                                    <select class="form-select formProfil" aria-label="Pilih Prodi" name="study_program_id"
+                                        disabled>
+                                        <option selected value="0">Pilih Prodi</option>
                                         @foreach ($study_programs as $study_program)
                                             <option @if (auth()->user()->study_program_id == $study_program->id) selected @endif
                                                 value="{{ $study_program->id }}">{{ $study_program->nama }}</option>
@@ -93,8 +125,8 @@
                             <div class="form-group">
                                 <label class="col-md-12">NIM</label>
                                 <div class="col-md-12">
-                                    <input type="text" placeholder="xx xx xxxx" value="{{ auth()->user()->nim }}"
-                                        class="form-control form-control-line formProfil" disabled />
+                                    <input type="text" placeholder="nim" value="{{ auth()->user()->nim }}"
+                                        class="form-control form-control-line formProfil" disabled name="nim" />
                                 </div>
                             </div>
                             <!-- Email -->
@@ -119,8 +151,8 @@
                             <div class="form-group">
                                 <label class="col-md-12">Phone No</label>
                                 <div class="col-md-12">
-                                    <input type="text" placeholder="123 456 7890"
-                                        class="form-control form-control-line formProfil" disabled />
+                                    <input type="text" placeholder="Masih kosong..." value="{{ auth()->user()->phone }}"
+                                        class="form-control form-control-line formProfil" disabled name="phone" />
                                 </div>
                             </div>
                         </form>
@@ -134,6 +166,41 @@
     <!-- End Container fluid  -->
     <!-- ============================================================== -->
     @include('Layouts.footer')
+
+    {{-- Modal --}}
+    <div class="modal fade" id="uploadProfilPict" tabindex="-1" aria-labelledby="uploadProfilPictLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="uploadProfilPictLabel">
+                        Upload foto profil
+                    </h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="{{ route('change-profile-picture') }}" method="POST" id="changePicture"
+                        enctype="multipart/form-data">
+                        @method('PUT')
+                        @csrf
+                        <div class="mb-3">
+                            <p>Maksimum 2 MB aja ya &#128030;</p>
+                            <label for="profile-picture" class="form-label">Upload foto baru</label>
+                            <input class="form-control" type="file" name="photo">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        Batal
+                    </button>
+                    <button type="submit" class="btn btn-primary" form="changePicture">
+                        Simpan
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
     <script>
         $(document).ready(function() {
             $("#save-profile-button").hide();

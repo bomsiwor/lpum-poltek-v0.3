@@ -21,7 +21,8 @@ return new class extends Migration
             $table->integer('nim')->nullable();
             $table->integer('study_program_id')->nullable();
             $table->boolean('vote_status')->default(false);
-            $table->string('image')->default('default_profile.png');
+            $table->string('phone')->nullable();
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }

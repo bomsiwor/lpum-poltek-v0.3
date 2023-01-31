@@ -1,90 +1,105 @@
 .tema-1 {
-  color: #ade8f4;
-  transition: 0.3s;
+    color: #ade8f4;
+    transition: 0.3s;
 }
 
 a:hover {
-  color: #023e8a;
+    color: #023e8a;
 }
 
 .tema-2 {
-  background-color: #0096c7;
-  color: white;
-  transition: 0.3s;
+    background-color: #0096c7;
+    color: white;
+    transition: 0.3s;
 }
 
 .tema-2:hover {
-  background-color: #ade8f4;
-  color: #03045e;
+    background-color: #ade8f4;
+    color: #03045e;
 }
 
 .tema-3 {
-  background-color: #03045e;
-  color: white;
+    background-color: #03045e;
+    color: white;
 }
 
 .kaki {
-  position: absolute;
-  bottom: 10px;
-  width: 100%;
-  height: 2rem;
-  opacity: 60%;
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    height: 2rem;
+    opacity: 60%;
 }
 
 .waktu-mundur {
-  font-size: 40px;
+    font-size: 40px;
 }
 
 input[type="checkbox"] {
-  /* Add if not using autoprefixer */
-  -webkit-appearance: none;
-  appearance: none;
-  /* For iOS < 15 to remove gradient background */
-  background-color: #fff;
-  /* Not removed via appearance */
-  margin: 0;
-  font: inherit;
-  color: currentColor;
-  width: 2em;
-  height: 2em;
-  border: 0.15em solid currentColor;
-  border-radius: 0.15em;
-  transform: translateY(-0.075em);
+    /* Add if not using autoprefixer */
+    -webkit-appearance: none;
+    appearance: none;
+    /* For iOS < 15 to remove gradient background */
+    background-color: #fff;
+    /* Not removed via appearance */
+    margin: 0;
+    font: inherit;
+    color: currentColor;
+    width: 2em;
+    height: 2em;
+    border: 0.15em solid currentColor;
+    border-radius: 0.15em;
+    transform: translateY(-0.075em);
 
-  display: grid;
-  place-content: center;
+    display: grid;
+    place-content: center;
 }
 
 input[type="checkbox"]::before {
-  content: "";
-  width: 0.65em;
-  height: 0.65em;
-  transform: scale(0);
-  transition: 120ms transform ease-in-out;
-  box-shadow: inset 1em 1em #023e8a;
+    content: "";
+    width: 0.65em;
+    height: 0.65em;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em #023e8a;
 
-  transform-origin: bottom left;
-  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+    transform-origin: bottom left;
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
 }
 
 input[type="checkbox"]:checked::before {
-  transform: scale(1);
+    transform: scale(1);
 }
 
 input[type="checkbox"]:focus {
-  outline: max(2px, 0.15em) solid currentColor;
-  outline-offset: max(2px, 0.15em);
+    outline: max(2px, 0.15em) solid currentColor;
+    outline-offset: max(2px, 0.15em);
 }
 
 #my-chart .column {
-  height: 35vh;
-  max-width: 600px;
-  margin: 0 auto;
-  --heading-size: 3rem;
+    height: 35vh;
+    max-width: 600px;
+    margin: 0 auto;
+    --heading-size: 3rem;
 }
 
 #my-chart caption {
-  font-size: 1rem;
-  font-weight: bold;
-  line-height: 1.25rem;
+    font-size: 1rem;
+    font-weight: bold;
+    line-height: 1.25rem;
+}
+
+.avatar {
+    width: 200px;
+    max-height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.avatar__mini {
+    /* Size */
+    width: 31px;
+    max-height: 31px;
+    border-radius: 50%;
+    object-fit: cover;
 }

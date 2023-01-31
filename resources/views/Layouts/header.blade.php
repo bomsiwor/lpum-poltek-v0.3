@@ -56,16 +56,22 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="#"
                         id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="{{ asset('assets/images/users/') . '/' . auth()->user()->image }}" alt="user"
-                            class="rounded-circle" width="31" />
+                        @if (!auth()->user()->image)
+                            <img src="{{ asset('assets/images/users/default_profile.png') }}" alt="user"
+                                class="rounded-circle" width="31" />
+                        @else
+                            <img src="{{ asset('storage/' . auth()->user()->image) }}" alt="user"
+                                class="avatar__mini" width="31" height="31" />
+                        @endif
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end user-dd animated" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="javascript:void(0)"><i class="ti-user m-r-5 m-l-5"></i> My
-                            Profile</a>
-                        <a class="dropdown-item" href="javascript:void(0)"><i class="ti-wallet m-r-5 m-l-5"></i> My
-                            Balance</a>
-                        <a class="dropdown-item" href="javascript:void(0)"><i class="ti-email m-r-5 m-l-5"></i>
-                            Inbox</a>
+                        <a class="dropdown-item" href="{{ route('profil') }}"><i class="ti-user m-r-5 m-l-5"></i> Profil
+                            Kamu</a>
+                        <form action="{{ route('logout') }}" method="POST">
+                            @csrf
+                            <button type="submit" class="dropdown-item"><i class="ti-wheelchair m-r-5 m-l-5"></i>
+                                Logout</button>
+                        </form>
                     </ul>
                 </li>
                 <!-- ============================================================== -->
