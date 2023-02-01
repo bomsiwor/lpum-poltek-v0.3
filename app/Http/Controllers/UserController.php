@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Imports\UsersImport;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Validation\Rules\File;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
@@ -71,5 +74,12 @@ class UserController extends Controller
             User::where('id', auth()->user()->id)->update($validated);
             return response()->json($validated);
         endif;
+    }
+
+    public function massUpload(Request $request)
+    {
+        Excel::import(new UsersImport, $request->file('users'));
+
+        return back();
     }
 }

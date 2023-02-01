@@ -54,6 +54,8 @@
                             Pilih user dan tekan tombol Ubah status untuk mengubah data
                             secara massal
                         </p>
+                        <button class="btn tema-3 mb-2" data-bs-target="#uploadMassUsers" data-bs-toggle="modal">Upload
+                            CSV</button>
                         <div class="table-responsive">
                             <table class="table table-bordered text-center" id="example">
                                 <thead>
@@ -71,7 +73,7 @@
                                     @foreach ($users as $user)
                                         <tr>
                                             <td><input type="checkbox" name="bahasa" value="{{ $user->id }}" /></td>
-                                            <td>1</td>
+                                            <td>{{ $loop->iteration }}</td>
                                             <td>{{ $user->nama }}</td>
                                             <td>{{ $user->study_program->nama }}</td>
                                             <td>{{ $user->nim }}</td>
@@ -90,22 +92,21 @@
                                                         value="{{ route('user-detail', ['user' => $user->nim]) }}">
                                                         Detail
                                                     </button>
+                                                </div>
                                             </td>
-
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
                         </div>
-                        </tr>
-                        @endforeach
-                        </tbody>
-                        </table>
+                        <button class="btn tema-3 verif-button" value="{{ route('verify') }}">Verify All</button>
+                        <button class="btn tema-3 verif-button" value="{{ route('unverify') }}">unverify all</button>
+
+
                     </div>
-                    <button class="btn tema-3 verif-button" value="{{ route('verify') }}">Verify All</button>
-                    <button class="btn tema-3 verif-button" value="{{ route('unverify') }}">unverify all</button>
-
-
                 </div>
             </div>
         </div>
-    </div>
     </div>
     <!-- ============================================================== -->
     <!-- End Container fluid  -->
@@ -183,6 +184,38 @@
     </div>
     @include('Layouts.footer')
 
+    {{-- Modal Upload user --}}
+    <div class="modal fade" id="uploadMassUsers" tabindex="-1" aria-labelledby="uploadMassUsersLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="uploadMassUsersLabel">
+                        Upload User banyak
+                    </h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="{{ route('mass-upload-users') }}" method="POST" id="massUsers"
+                        enctype="multipart/form-data">
+                        @csrf
+                        <div class="mb-3">
+                            <label for="profile-picture" class="form-label">Upload file CSV</label>
+                            <input class="form-control" type="file" name="users">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        Batal
+                    </button>
+                    <button type="submit" class="btn btn-primary" form="massUsers">
+                        Simpan
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script>
         $(document).ready(function() {

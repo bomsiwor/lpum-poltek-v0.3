@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Spatie\Permission\Models\Permission;
+use Spatie\Permission\Models\Role;
 
 class VoteController extends Controller
 {
@@ -38,10 +39,10 @@ class VoteController extends Controller
 
     public function addRole()
     {
-        // Permission::create(['name' => 'coblos']);
-        $user = User::find(2);
-        $user->revokePermissionTo('coblos');
+        $role = Role::create([
+            'name' => 'User'
+        ]);
 
-        return redirect()->route('pagu');
+        return back();
     }
 }

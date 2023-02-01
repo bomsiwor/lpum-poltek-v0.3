@@ -32,7 +32,7 @@
                             class="hide-menu">Profile</span></a>
                 </li>
                 {{-- Kelola User --}}
-                @can('role-delete')
+                @can('manage-users')
                     <li class="sidebar-item">
                         <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ route('manage-user') }}"
                             aria-expanded="false"><i class="mdi mdi-file"></i><span class="hide-menu">Kelola User</span></a>
