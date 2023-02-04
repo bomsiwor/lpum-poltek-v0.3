@@ -48,6 +48,9 @@
                 <div class="card">
                     <div class="card-body">
                         <h1 class="card-title">Kelola User</h1>
+                        @if (session('message'))
+                            <div class="alert alert-success">{{ session('message') }}</div>
+                        @endif
                         <p>
                             Dapat mengubah data-data dari akun user & mengubah status
                             vote user. <br />
@@ -86,7 +89,14 @@
                                             </td>
                                             <td>
                                                 <div class="d-inline">
-                                                    <button class="btn btn-danger">Hapus</button>
+                                                    <form action="{{ route('user.delete') }}" method="post"
+                                                        class="d-inline">
+                                                        @method('delete')
+                                                        @csrf
+                                                        <input type="hidden" name="param" value="{{ $user->nim }}">
+                                                        <button class="btn btn-danger" type="submit"
+                                                            onclick="return confirm('Yakin hapus?');">Hapus</button>
+                                                    </form>
                                                     <button class="btn tema-3 detail-button" data-bs-toggle="modal"
                                                         data-bs-target="#exampleModal"
                                                         value="{{ route('user-detail', ['user' => $user->nim]) }}">

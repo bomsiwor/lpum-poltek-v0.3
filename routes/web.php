@@ -52,6 +52,7 @@ Route::controller(UserController::class)->prefix('user')->group(function () {
     Route::put('/user-detail', 'changeDetail')->name('change-user-detail');
     Route::put('/profile-picture', 'changePicture')->name('change-profile-picture');
     Route::delete('/profile-picture', 'deletePicture')->name('delete-profile-picture');
+    Route::delete('/delete', 'deleteUser')->name('user.delete');
 
     Route::post('/mass-upload', 'massUpload')->name('mass-upload-users');
 });

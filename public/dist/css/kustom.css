@@ -103,3 +103,17 @@ input[type="checkbox"]:focus {
     border-radius: 50%;
     object-fit: cover;
 }
+
+.accordion-collapse {
+    border: 0;
+}
+
+.item-akord {
+    margin-top: 5px;
+    margin-bottom: 15px;
+    padding-bottom: 3px;
+}
+
+.item-akord:hover {
+    border-bottom: solid black 1px;
+}

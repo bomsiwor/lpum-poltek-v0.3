@@ -78,8 +78,18 @@ class UserController extends Controller
 
     public function massUpload(Request $request)
     {
-        Excel::import(new UsersImport, $request->file('users'));
+        $import = new UsersImport;
+        Excel::import($import, $request->file('users'));
 
-        return back();
+        $count = $import->getCountRow();
+
+        return back()->with("message", "Berhasil mengupdate $count user");
+    }
+
+    public function deleteUser(Request $request)
+    {
+        User::where('nim', $request->param)->delete();
+
+        return back()->with("message", "Berhasil hapus user");
     }
 }
