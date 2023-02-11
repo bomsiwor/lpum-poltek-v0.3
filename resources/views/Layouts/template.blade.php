@@ -29,11 +29,14 @@
     <link rel="stylesheet" href="{{ asset('dist/css/kustom.css') }}">
 
     <!-- Alertify CSS -->
-    <link rel="stylesheet" href="http://cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css" />
-    <!-- Alertify Default theme -->
-    <link rel="stylesheet" href="http://cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css" />
+    <link rel="stylesheet" href="{{ asset('assets/libs/alertifyjs/css/alertify.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/libs/alertifyjs/css/themes/bootstrap.css') }}">
+
     {{-- Jquery --}}
     <script src="{{ asset('assets/libs/jquery/dist/jquery.min.js') }}"></script>
+
+    {{-- SWAL --}}
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <!-- Chart -->
     <link rel="stylesheet" href="https://unpkg.com/charts.css/dist/charts.min.css" />
@@ -68,7 +71,7 @@
 
 
 <!-- Alertify JavaScript -->
-<script src="http://cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+<script src="{{ asset('assets/libs/alertifyjs/alertify.js') }}"></script>
 <!--Custom JavaScript -->
 <script src="{{ asset('dist/js/custom.js') }}"></script>
 

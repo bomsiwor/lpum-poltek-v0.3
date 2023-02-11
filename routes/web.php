@@ -19,7 +19,7 @@ use App\Http\Controllers\UserController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    abort(401);
 });
 
 Route::controller(DashboardController::class)->prefix('dashboard')->middleware('auth')->group(function () {
@@ -45,6 +45,7 @@ Route::controller(VoteController::class)->prefix('vote')->group(function () {
     Route::get('/add-role', 'addRole');
     Route::post('/verify', 'verify')->name('verify');
     Route::post('/unverify', 'unverify')->name('unverify');
+    Route::get('/pdf', 'printPDF')->name('print-pdf');
 });
 
 Route::controller(UserController::class)->prefix('user')->group(function () {

@@ -14,9 +14,11 @@
             <!-- ============================================================== -->
             <!-- End Logo -->
             <!-- ============================================================== -->
+
+
             <!-- This is for the sidebar toggle which is visible on mobile only -->
             <a class="nav-toggler waves-effect waves-light d-block d-md-none" href="javascript:void(0)"><i
-                    class="mdi mdi-menu"></i></a>
+                    class="fa-solid fa-sliders fa-beat-fade"></i></a>
         </div>
         <!-- ============================================================== -->
         <!-- End Logo -->

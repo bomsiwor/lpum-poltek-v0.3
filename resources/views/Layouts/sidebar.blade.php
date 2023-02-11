@@ -32,6 +32,13 @@
                                     <ul class="list-akord">
                                         <li class="item-akord"><a href="{{ route('manage-user') }}"><i
                                                     class="mdi mdi-folder-account"></i> Kelola User </a></li>
+                                        <li class="item-akord"><a href="javascript:void(0)"><i
+                                                    class="fas fa-solid fa-mask"></i> Kelola
+                                                Peran</a></li>
+                                        <li class="item-akord"><a href="javascript:void(0)"><i
+                                                    class="fas fa-solid fa-comments"></i> Kelola Opini Publik</a></li>
+                                        <li class="item-akord"><a href="javascript:void(0)"><i
+                                                    class="fas fa-solid fa-newspaper"></i> Kelola Postingan</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -65,7 +72,8 @@
                 <li class="sidebar-item">
                     <form action="/auth/logout" method="post">
                         @csrf
-                        <button class="btn tema-3" id="logoutButton">Logout!</button>
+                        <button class="btn tema-3" id="logoutButton"><i class="fas fa-solid fa-right-from-bracket"></i>
+                            Logout!</button>
                     </form>
                 </li>
             </ul>

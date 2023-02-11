@@ -97,7 +97,7 @@
                                                         @method('delete')
                                                         @csrf
                                                         <input type="hidden" name="param" value="{{ $user->nim }}">
-                                                        <button class="btn btn-danger" type="submit"
+                                                        <button class="btn btn-danger my-1" type="submit"
                                                             onclick="return confirm('Yakin hapus?');">Hapus</button>
                                                     </form>
                                                     <button class="btn tema-3 detail-button" data-bs-toggle="modal"

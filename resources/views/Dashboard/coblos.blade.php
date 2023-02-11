@@ -68,7 +68,7 @@
                         <h1 class="card-title">Nomor urut 1</h1>
                         <h2>Jokowi Ahok</h2>
                         <img src="../assets/images/jokowi-ahok.jpg" alt="" style="width: 400px; border-radius: 5px"
-                            class="shadow-sm" />
+                            class="shadow-sm paslon-photo" />
                         <hr />
                         <div class="fs-3 fw-bold">Visi</div>
                         <div class="text-start">
@@ -106,7 +106,7 @@
                         <h1 class="card-title">Nomor urut 2</h1>
                         <h2>Prabowo Sandi</h2>
                         <img src="../assets/images/prabowo-sandi.jpg" alt=""
-                            style="width: 400px; border-radius: 5px" class="shadow-sm" />
+                            style="width: 400px; border-radius: 5px" class="shadow-sm paslon-photo" />
                         <hr />
                         <div class="fs-3 fw-bold">Visi</div>
                         <div class="text-start">
@@ -144,7 +144,7 @@
                         <h1 class="card-title">Nomor urut 3</h1>
                         <h2>Naruto Sasuke</h2>
                         <img src="../assets/images/naruto-sasuke.jpg" alt=""
-                            style="width: 400px; border-radius: 5px" class="shadow-sm" />
+                            style="width: 400px; border-radius: 5px" class="shadow-sm paslon-photo" />
                         <hr />
                         <div class="fs-3 fw-bold">Visi</div>
                         <div class="text-center">
@@ -180,7 +180,7 @@
                         <h1 class="card-title">Nomor urut 3</h1>
                         <h2>Naruto Sasuke</h2>
                         <img src="../assets/images/spongbob-patrik.png" alt=""
-                            style="width: 400px; border-radius: 5px" class="shadow-sm" />
+                            style="width: 400px; border-radius: 5px" class="shadow-sm paslon-photo" />
                         <hr />
                         <div class="fs-3 fw-bold">Visi</div>
                         <div class="text-center">

@@ -30,6 +30,7 @@ $(function () {
             $("#main-wrapper").attr("data-sidebartype", "mini-sidebar");
             $("#logoutButton").show();
             $("#profileButton").show();
+            $(".paslon-photo").css("width", "300px");
         } else {
             $("#main-wrapper").attr("data-sidebartype", "full");
             $("#logoutButton").hide();
@@ -41,7 +42,7 @@ $(function () {
 });
 
 // $(document).bind("contextmenu", function (e) {
-//   return false;
+//     return false;
 // });
 
 document.body.addEventListener("keydown", (event) => {
@@ -81,7 +82,12 @@ $("#save-profile-button").click(function (e) {
                     console.log(response);
                 },
             });
-            alertify.success("Sukses edit profil!");
+            // alertify.success("Sukses edit profil!");
+            Swal.fire(
+                "Berhasil",
+                "Memperbarui profilmu yang cupu itu",
+                "success"
+            );
             $(".formProfil").prop("disabled", true);
             $("#edit-profile-button").html("Edit Profil");
             $("#save-profile-button").hide();
@@ -139,18 +145,3 @@ $("#sendEmailButton").click(async function (e) {
         })
     );
 });
-
-// try {
-//     result = await $.ajax({
-//         type: "GET",
-//         url: "/surat/kirim",
-//     }).then((result) => {
-// alertify.notify(result.message, "warning", 3);
-// $(this).html(
-//     '<i class="fa-regular fa-circle-check fa-beat-fade"></i> Terkirim'
-// );
-//         return console.log("Success");
-//     });
-// } catch (error) {
-//     console.log(error);
-// }

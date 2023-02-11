@@ -71,6 +71,101 @@
                 </div>
             </div>
         </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Timeline LPUM </h5>
+                        <div>
+                            <ul class="nav nav-tabs" id="pemiluTab" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="btn btn-primary" id="pemilu-1-tab" data-bs-toggle="tab"
+                                        data-bs-target="#pemilu-1-pane" type="button" role="tab"
+                                        aria-controls="pemilu-1-pane" aria-selected="true">
+                                        Pemilu 1
+                                    </button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="pemilu-2-tab" data-bs-toggle="tab"
+                                        data-bs-target="#pemilu-2-pane" type="button" role="tab"
+                                        aria-controls="pemilu-2-pane" aria-selected="false">
+                                        Pemilu 2
+                                    </button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="pemilu-3-tab" data-bs-toggle="tab"
+                                        data-bs-target="#pemilu-3-pane" type="button" role="tab"
+                                        aria-controls="pemilu-3-pane" aria-selected="false">
+                                        Pemilu 3
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="tab-content" id="pemiluTabContent">
+                            <div class="tab-pane fade show active" id="pemilu-1-pane" role="tabpanel"
+                                aria-labelledby="pemilu-1" tabindex="0">
+                                <div id="content">
+                                    <ul class="timeline">
+                                        <li class="event" data-date="12:30 - 1:00pm">
+                                            <h3>Registrasi <span class="badge bg-danger">Online</span></h3>
+
+                                            <p>Calon registrasi melalui web LPUM </p>
+                                        </li>
+                                        <li class="event" data-date="2:30 - 4:00pm">
+                                            <h3>Kampanye</h3>
+                                            <p>Calon melakukan promosi diri</p>
+                                        </li>
+                                        <li class="event" data-date="5:00 - 8:00pm">
+                                            <h3>Debat Terbuka #1 <span class="badge bg-success">Offline</span></h3>
+                                            <p>
+                                                Calon melakukan debat dengan topik
+                                                <b>Kecerdasan berorganisasi</b>
+                                                <br /><a href="#">Detail</a>
+                                            </p>
+                                        </li>
+                                        <li class="event" data-date="8:30 - 9:30pm">
+                                            <h3>Pemilihan</h3>
+                                            <p>
+                                                Lorem ipsum dolor sit amet, consectetur
+                                                adipisicing elit. Fugit velit perspiciatis quo
+                                                omnis exercitationem distinctio a praesentium,
+                                                corrupti ea voluptatum!
+                                            </p>
+                                            <p class="text-danger">
+                                                Sampai 9 Agustus 2023 12:00
+                                            </p>
+                                        </li>
+                                        <li class="event" data-date="8 Agustus 2023 15:00">
+                                            <h3>Penghitungan</h3>
+                                            <p>
+                                                Lorem ipsum dolor sit amet consectetur adipisicing
+                                                elit. Voluptatem veritatis excepturi ea omnis
+                                                nobis culpa.
+                                                <br />
+                                                <span class="text-danger fw-bold">Sampai 9 Agustus 2023</span>
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="pemilu-2-pane" role="tabpanel" aria-labelledby="pemilu-2"
+                                tabindex="0">
+                                ...
+                            </div>
+                            <div class="tab-pane fade" id="pemilu-3-pane" role="tabpanel" aria-labelledby="pemilu-3"
+                                tabindex="0">
+                                ...
+                            </div>
+                            <div class="tab-pane fade" id="disabled-tab-pane" role="tabpanel"
+                                aria-labelledby="disabled-tab" tabindex="0">
+                                ...
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <!-- ============================================================== -->
         <!-- Recent comment and chats -->
         <!-- ============================================================== -->

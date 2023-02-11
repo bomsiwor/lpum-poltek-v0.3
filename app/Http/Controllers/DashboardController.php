@@ -14,6 +14,7 @@ class DashboardController extends Controller
     {
         $this->users = new User();
     }
+
     public function index()
     {
         $data = [

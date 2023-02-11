@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
+use PDF;
 
 class VoteController extends Controller
 {
@@ -44,5 +45,19 @@ class VoteController extends Controller
         ]);
 
         return back();
+    }
+
+    public function printPDF()
+    {
+        $logo = base64_encode(public_path('assets/images/Logo-lpum.png'));
+
+        $data = [
+            'user' => User::all(),
+            'logo' => $logo
+        ];
+
+        $pdf = PDF::loadView('Dashboard.printable', $data);
+
+        return $pdf->stream('file.pdf');
     }
 }
