@@ -185,8 +185,13 @@
                         @csrf
                         <div class="mb-3">
                             <p>Maksimum 2 MB aja ya &#128030;</p>
+                            <div class="text-center">
+                                <img id="preview-image-before-upload"
+                                    src="{{ asset('assets/images/image-not-found-icon.png') }}" alt="preview image"
+                                    style="max-height: 250px;">
+                            </div>
                             <label for="profile-picture" class="form-label">Upload foto baru</label>
-                            <input class="form-control" type="file" name="photo">
+                            <input class="form-control" type="file" name="photo" id="photo">
                         </div>
                     </form>
                 </div>
@@ -204,6 +209,20 @@
     <script>
         $(document).ready(function() {
             $("#save-profile-button").hide();
+
+
+            $("#photo").change(function(e) {
+                e.preventDefault();
+                let reader = new FileReader();
+
+                reader.onload = (e) => {
+                    $('#preview-image-before-upload').attr('src', e.target.result);
+                    $('#preview-image-before-upload').attr('width', 250);
+                    $('#preview-image-before-upload').attr('height', 250);
+                    $("#preview-image-before-upload").addClass("avatar");
+                }
+                reader.readAsDataURL(this.files[0]);
+            });
         });
     </script>
 @endsection

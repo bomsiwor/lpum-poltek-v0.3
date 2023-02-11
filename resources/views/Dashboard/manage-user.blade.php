@@ -57,7 +57,8 @@
                             Pilih user dan tekan tombol Ubah status untuk mengubah data
                             secara massal
                         </p>
-                        <button class="btn tema-3 mb-2" data-bs-target="#uploadMassUsers" data-bs-toggle="modal">Upload
+                        <button class="btn tema-3 mb-2" data-bs-target="#uploadMassUsers" data-bs-toggle="modal"><i
+                                class="fa-solid fa-cloud-arrow-up"></i> Upload
                             CSV</button>
                         <div class="table-responsive">
                             <table class="table table-bordered text-center" id="example">
@@ -82,9 +83,11 @@
                                             <td>{{ $user->nim }}</td>
                                             <td>
                                                 @if ($user->vote_status)
-                                                    <span class="badge tema-2">Active Voter</span>
+                                                    <span class="badge tema-2"><i class="fa-solid fa-circle-check"></i>
+                                                        Active Voter</span>
                                                 @else
-                                                    <span class="badge bg-danger">Not Active</span>
+                                                    <span class="badge bg-danger">
+                                                        <i class="fa-solid fa-triangle-exclamation"></i> Not Active</span>
                                                 @endif
                                             </td>
                                             <td>
@@ -109,10 +112,10 @@
                                 </tbody>
                             </table>
                         </div>
-                        <button class="btn tema-3 verif-button" value="{{ route('verify') }}">Verify All</button>
-                        <button class="btn tema-3 verif-button" value="{{ route('unverify') }}">unverify all</button>
-
-
+                        <button class="btn tema-3 verif-button" value="{{ route('verify') }}"><span
+                                class="mdi mdi-check-decagram"></span> Verify All</button>
+                        <button class="btn tema-3 verif-button" value="{{ route('unverify') }}"><span
+                                class="mdi mdi-alert-octagram"></span> unverify all</button>
                     </div>
                 </div>
             </div>

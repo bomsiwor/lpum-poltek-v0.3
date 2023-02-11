@@ -22,7 +22,8 @@
     {{-- MDI --}}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.1.96/css/materialdesignicons.min.css">
     {{-- FontAwesom --}}
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" /> --}}
+    <script src="https://kit.fontawesome.com/21c1c2d6a2.js" crossorigin="anonymous"></script>
 
     {{-- Custom CSS Real --}}
     <link rel="stylesheet" href="{{ asset('dist/css/kustom.css') }}">
@@ -65,7 +66,7 @@
 <!--This page JavaScript -->
 <!--chartis chart-->
 
-<script src="{{ asset('dist/js/pages/dashboards/dashboard1.js') }}"></script>
+
 <!-- Alertify JavaScript -->
 <script src="http://cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
 <!--Custom JavaScript -->

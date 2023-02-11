@@ -22,7 +22,7 @@
                 {{-- Kelola User --}}
                 @can('manage-users')
                     <li class="sidebar-item">
-                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="#"
+                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="javascript:void(0)"
                             data-bs-toggle="collapse" data-bs-target="#accordion-manage-user" aria-expanded="true"
                             aria-controls="accordion-manage-user"><i class="mdi mdi-shield-crown"></i><span
                                 class="accordion-header">Halaman Admin</span></a>
@@ -38,8 +38,9 @@
                         </div>
                     </li>
                 @endcan
+                {{-- Pemilu --}}
                 <li class="sidebar-item">
-                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="#"
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="javascript:void(0)"
                         data-bs-toggle="collapse" data-bs-target="#accordion-vote" aria-expanded="true"
                         aria-controls="accordion-vote"><i class="mdi mdi-vote"></i><span
                             class="accordion-header">Pemilu</span></a>
@@ -51,20 +52,22 @@
                                             Coblos digital</a></li>
                                     <li class="item-akord"><a href="{{ route('hasil') }}"><i
                                                 class="mdi mdi-counter"></i> Hasil Pemilu</a></li>
-                                    <li class="item-akord"><a href="#"><i class="mdi mdi-cog"></i> Kelola
-                                            Pemilu</a></li>
+                                    @can('manage-voting')
+                                        <li class="item-akord"><a href="#"><i class="mdi mdi-cog"></i> Kelola
+                                                Pemilu</a></li>
+                                    @endcan
                                 </ul>
                             </div>
                         </div>
                     </div>
                 </li>
+                {{-- Logout --}}
                 <li class="sidebar-item">
                     <form action="/auth/logout" method="post">
                         @csrf
                         <button class="btn tema-3" id="logoutButton">Logout!</button>
                     </form>
                 </li>
-
             </ul>
         </nav>
         <!-- End Sidebar navigation -->

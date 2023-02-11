@@ -14,14 +14,15 @@ class TestEmail extends Mailable
 {
     use Queueable, SerializesModels;
 
+    public $nama;
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($nama)
     {
-        //
+        $this->nama = $nama;
     }
 
     /**
@@ -32,10 +33,7 @@ class TestEmail extends Mailable
     public function envelope()
     {
         return new Envelope(
-            replyTo: [
-                new Address('taylor@example.com', 'Taylor Otwell'),
-            ],
-            subject: 'Akun LPUM',
+            subject: 'Informasi Akun LPUM',
         );
     }
 

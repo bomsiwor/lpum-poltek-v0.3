@@ -10,22 +10,28 @@ use Illuminate\Support\Facades\Artisan;
 
 class EmailController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $recepients = [
-            'bomsiwor@gmail.com',
-        ];
-        foreach ($recepients as $recipient) :
-            Mail::to($recipient)->send(new TestEmail());
-        endforeach;
+        Mail::to($request->email)->send(new TestEmail($request->nama));
 
-        return "sudah terkirim";
+        // $recepients = [
+        //     'bomsiwor@gmail.com',
+        //     'dimasboma24@gmail.com'
+        // ];
+
+        // foreach ($recepients as $recipient) :
+        //     Mail::to($recipient)->send(new TestEmail("Basuki"));
+        // endforeach;
+
+        return response()->json([
+            'message' => "Berhasil terkirim"
+        ], 200);
     }
 
     public function bulkEmail()
     {
-        $job = Mail::to("sembarang@mail.com")->send(new TestEmail());
-        TestBulkEmail::dispatch($job)->delay(now()->addSeconds(30));
+        // $job = Mail::to("sembarang@mail.com")->send(new TestEmail());
+        // TestBulkEmail::dispatch($job)->delay(now()->addSeconds(30));
 
         echo "Terkirim";
     }

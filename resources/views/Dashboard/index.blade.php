@@ -5,8 +5,6 @@
     @include('Layouts.header')
     @include('Layouts.sidebar')
     @include('Layouts.page-wrapper')
-    <script src="https://cdn.tiny.cloud/1/23i0vpqw2xve8nrva87m0zed2gb163tjzxlf0lbl6q7rmpif/tinymce/6/tinymce.min.js"
-        referrerpolicy="origin"></script>
 
 
     <!-- ============================================================== -->
@@ -56,39 +54,21 @@
                                 @include('dashboard.tab1')
                             </div>
                             <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab"
-                                tabindex="0">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere officia nemo
-                                impedit dolorum modi. Sapiente vero porro illo unde maiores?</div>
+                                tabindex="0">
+                                <button class="btn btn-primary" id="sendEmailButton">
+                                    Kirim email</button>
+                                <div id="emailProgress" hidden>
+                                    <p class="mb-0 mt-1">Mengirim <span id="countEmail"></span></p>
+                                    <p class="animate__animated animate__pulse animate__infinite infinite text-danger">
+                                        Jangan di
+                                        refresh!</p>
+                                </div>
+                            </div>
                             <div class="tab-pane fade" id="disabled-tab-pane" role="tabpanel" aria-labelledby="disabled-tab"
                                 tabindex="0">gaada isinya</div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-8">
-                <textarea>
-                    Welcome to TinyMCE!
-                </textarea>
-                <script>
-                    tinymce.init({
-                        selector: 'textarea',
-                        plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed linkchecker a11ychecker tinymcespellchecker permanentpen powerpaste advtable advcode editimage tinycomments tableofcontents footnotes mergetags autocorrect typography inlinecss',
-                        toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck typography | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
-                        tinycomments_mode: 'embedded',
-                        tinycomments_author: 'Author name',
-                        mergetags_list: [{
-                                value: 'First.Name',
-                                title: 'First Name'
-                            },
-                            {
-                                value: 'Email',
-                                title: 'Email'
-                            },
-                        ]
-                    });
-                </script>
             </div>
         </div>
         <!-- ============================================================== -->

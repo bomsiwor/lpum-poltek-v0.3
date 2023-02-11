@@ -4,8 +4,8 @@
 <!-- ============================================================== -->
 <footer class="footer text-center">
     All Rights Reserved by LPUM. Designed and Developed by
-    Bomsiwor</a>.
-  </footer>
+    Bomsiwor & Jara</a>.
+</footer>
 </div>
 <!-- ============================================================== -->
 <!-- End Wrapper -->

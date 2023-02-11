@@ -29,6 +29,7 @@ $(function () {
         if (width < 1170) {
             $("#main-wrapper").attr("data-sidebartype", "mini-sidebar");
             $("#logoutButton").show();
+            $("#profileButton").show();
         } else {
             $("#main-wrapper").attr("data-sidebartype", "full");
             $("#logoutButton").hide();
@@ -93,3 +94,63 @@ $("#save-profile-button").click(function (e) {
         }
     );
 });
+
+$("#sendEmailButton").click(async function (e) {
+    e.preventDefault();
+    let result;
+    var recipes = [
+        { nama: "boma", email: "bomsiwor@gmail.com" },
+        { nama: "jara", email: "dimasboma24@gmail.com" },
+    ];
+
+    var count = recipes.length - 1;
+    $(this).html(
+        '<i class="fa-solid fa-asterisk fa-spin" style="--fa-animation-duration: 5s;"></i> Mengirim'
+    );
+    $("#emailProgress").removeAttr("hidden");
+
+    $(this).attr("disabled", true);
+    $.when(
+        $.each(recipes, function (index, recipe) {
+            setTimeout(async () => {
+                try {
+                    await $.ajax({
+                        type: "GET",
+                        url: "/surat/kirim",
+                        data: recipe,
+                        dataType: "json",
+                    }).then((result) => {
+                        alertify.notify("Sukses", "warning", 3);
+                        $("#countEmail").html(`(${index + 1} / ${count + 1})`);
+                        console.log(result.message);
+                    });
+
+                    if (index == count) {
+                        alertify.notify("Sukses mengirim semua", "success", 3);
+                        $("#sendEmailButton").html(
+                            '<i class="fa-regular fa-circle-check fa-beat-fade"></i> Terkirim'
+                        );
+                        $("#emailProgress").attr("hidden", true);
+                    }
+                } catch (error) {
+                    console.log(error);
+                }
+            }, index * 2000);
+        })
+    );
+});
+
+// try {
+//     result = await $.ajax({
+//         type: "GET",
+//         url: "/surat/kirim",
+//     }).then((result) => {
+// alertify.notify(result.message, "warning", 3);
+// $(this).html(
+//     '<i class="fa-regular fa-circle-check fa-beat-fade"></i> Terkirim'
+// );
+//         return console.log("Success");
+//     });
+// } catch (error) {
+//     console.log(error);
+// }
