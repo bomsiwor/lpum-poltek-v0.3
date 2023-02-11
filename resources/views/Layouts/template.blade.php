@@ -43,6 +43,16 @@
     <!-- Animate -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
+    {{-- Signature --}}
+    <script src="{{ asset('assets/libs/jquery-sign/jq-signature.min.js') }}"></script>
+
+    {{-- BS JS --}}
+    <script src="{{ asset('assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
+
+    {{--  Medium Zoom --}}
+    <script src="
+    https://cdn.jsdelivr.net/npm/medium-zoom@1.0.8/dist/medium-zoom.min.js
+    "></script>
     <!-- Checkbox -->
     <script src="../assets/libs/jquery.simple-checkbox-table.js"></script>
     <!-- Datatables -->
@@ -60,7 +70,7 @@
 <!-- ============================================================== -->
 
 <!-- Bootstrap tether Core JavaScript -->
-<script src="{{ asset('assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
+
 <script src="{{ asset('dist/js/app-style-switcher.js') }}"></script>
 <!--Wave Effects -->
 <script src="{{ asset('dist/js/waves.js') }}"></script>

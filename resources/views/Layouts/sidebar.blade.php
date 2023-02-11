@@ -68,6 +68,7 @@
                         </div>
                     </div>
                 </li>
+
                 {{-- Logout --}}
                 <li class="sidebar-item">
                     <form action="/auth/logout" method="post">

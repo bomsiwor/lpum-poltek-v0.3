@@ -68,34 +68,41 @@
                         <h1 class="card-title">Nomor urut 1</h1>
                         <h2>Jokowi Ahok</h2>
                         <img src="../assets/images/jokowi-ahok.jpg" alt="" style="width: 400px; border-radius: 5px"
-                            class="shadow-sm paslon-photo" />
-                        <hr />
-                        <div class="fs-3 fw-bold">Visi</div>
-                        <div class="text-start">
-                            <ol type="1">
-                                <li>Ajur</li>
-                                <li>Mumur</li>
-                                <li>Remokkkk</li>
-                            </ol>
-                        </div>
-                        <hr />
-                        <div class="fs-3 fw-bold">Misi</div>
-                        <div class="text-start">
-                            <ol type="1">
-                                <li>Ajur</li>
-                                <li>Mumur</li>
-                                <li>Remokkkk</li>
-                            </ol>
+                            class="shadow-sm paslon-photo" id="zoom-default" />
+                        <div class="collapse paslon" id="kolaps1">
+                            <hr />
+                            <div class="fs-3 fw-bold">Visi</div>
+                            <div class="text-start">
+                                <ol type="1">
+                                    <li>Ajur</li>
+                                    <li>Mumur</li>
+                                    <li>Remokkkk</li>
+                                </ol>
+                            </div>
+                            <hr />
+                            <div class="fs-3 fw-bold">Misi</div>
+                            <div class="text-start">
+                                <ol type="1">
+                                    <li>Ajur</li>
+                                    <li>Mumur</li>
+                                    <li>Remokkkk</li>
+                                </ol>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <div class="me-auto p-2 fw-bold">Yakin dengan dia?</div>
+                                <div class="p-2">
+                                    <button class="btn tema-3 coblos" id="coblosButton" value="1">
+                                        Coblos
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="card-footer">
-                        <div class="d-flex align-items-center">
-                            <div class="me-auto p-2 fw-bold">Yakin dengan dia?</div>
-                            <div class="p-2">
-                                <button class="btn tema-3 coblos" id="coblosButton" value="1">
-                                    Coblos
-                                </button>
-                            </div>
+                        <div class="text-center">
+                            <a data-bs-toggle="collapse" class="detail-toggle" href="#kolaps1" role="button"
+                                aria-expanded="false" aria-controls="kolaps1">Lihat selengkapnya <i
+                                    class="fas fa-solid fa-angles-down"></i></a>
                         </div>
                     </div>
                 </div>
@@ -106,34 +113,41 @@
                         <h1 class="card-title">Nomor urut 2</h1>
                         <h2>Prabowo Sandi</h2>
                         <img src="../assets/images/prabowo-sandi.jpg" alt=""
-                            style="width: 400px; border-radius: 5px" class="shadow-sm paslon-photo" />
-                        <hr />
-                        <div class="fs-3 fw-bold">Visi</div>
-                        <div class="text-start">
-                            <ol type="1">
-                                <li>Ajur</li>
-                                <li>Mumur</li>
-                                <li>Remokkkk</li>
-                            </ol>
-                        </div>
-                        <hr />
-                        <div class="fs-3 fw-bold">Misi</div>
-                        <div class="text-start">
-                            <ol type="1">
-                                <li>Ajur</li>
-                                <li>Mumur</li>
-                                <li>Remokkkk</li>
-                            </ol>
+                            style="width: 400px; border-radius: 5px" class="shadow-sm paslon-photo" id="zoom-default" />
+                        <div class="collapse paslon" id="kolaps2">
+                            <hr />
+                            <div class="fs-3 fw-bold">Visi</div>
+                            <div class="text-start">
+                                <ol type="1">
+                                    <li>Ajur</li>
+                                    <li>Mumur</li>
+                                    <li>Remokkkk</li>
+                                </ol>
+                            </div>
+                            <hr />
+                            <div class="fs-3 fw-bold">Misi</div>
+                            <div class="text-start">
+                                <ol type="1">
+                                    <li>Ajur</li>
+                                    <li>Mumur</li>
+                                    <li>Remokkkk</li>
+                                </ol>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <div class="me-auto p-2 fw-bold">Yakin dengan dia?</div>
+                                <div class="p-2">
+                                    <button class="btn tema-3 coblos" id="coblosButton" value="2">
+                                        Coblos
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="card-footer">
-                        <div class="d-flex align-items-center">
-                            <div class="me-auto p-2 fw-bold">Yakin dengan dia?</div>
-                            <div class="p-2">
-                                <button class="btn tema-3 coblos" id="coblosButton" value="2">
-                                    Coblos
-                                </button>
-                            </div>
+                        <div class="text-center">
+                            <a data-bs-toggle="collapse" class="detail-toggle" href="#kolaps2" role="button"
+                                aria-expanded="false" aria-controls="kolaps2">Lihat selengkapnya <i
+                                    class="fas fa-solid fa-angles-down"></i></a>
                         </div>
                     </div>
                 </div>
@@ -144,32 +158,39 @@
                         <h1 class="card-title">Nomor urut 3</h1>
                         <h2>Naruto Sasuke</h2>
                         <img src="../assets/images/naruto-sasuke.jpg" alt=""
-                            style="width: 400px; border-radius: 5px" class="shadow-sm paslon-photo" />
-                        <hr />
-                        <div class="fs-3 fw-bold">Visi</div>
-                        <div class="text-center">
-                            Konoha yang maju mengikuti Industri 4.0
-                        </div>
-                        <hr />
-                        <div class="fs-3 fw-bold">Misi</div>
-                        <div class="text-start">
-                            <ol type="1">
-                                <li>Pembangunan KRL antar desa</li>
-                                <li>
-                                    Pemberian bantuan pendidikan bagi ninja kurang mampu
-                                </li>
-                                <li>Transparansi ujian jounin</li>
-                            </ol>
+                            style="width: 400px; border-radius: 5px" class="shadow-sm paslon-photo" id="zoom-default" />
+                        <div class="collapse paslon" id="kolaps3">
+                            <hr />
+                            <div class="fs-3 fw-bold">Visi</div>
+                            <div class="text-center">
+                                Konoha yang maju mengikuti Industri 4.0
+                            </div>
+                            <hr />
+                            <div class="fs-3 fw-bold">Misi</div>
+                            <div class="text-start">
+                                <ol type="1">
+                                    <li>Pembangunan KRL antar desa</li>
+                                    <li>
+                                        Pemberian bantuan pendidikan bagi ninja kurang mampu
+                                    </li>
+                                    <li>Transparansi ujian jounin</li>
+                                </ol>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <div class="me-auto p-2 fw-bold">Yakin dengan dia?</div>
+                                <div class="p-2">
+                                    <button class="btn tema-3 coblos" id="coblosButton" value="3">
+                                        Coblos
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="card-footer">
-                        <div class="d-flex align-items-center">
-                            <div class="me-auto p-2 fw-bold">Yakin dengan dia?</div>
-                            <div class="p-2">
-                                <button class="btn tema-3 coblos" id="coblosButton" value="3">
-                                    Coblos
-                                </button>
-                            </div>
+                        <div class="text-center">
+                            <a data-bs-toggle="collapse" class="detail-toggle" href="#kolaps3" role="button"
+                                aria-expanded="false" aria-controls="kolaps3">Lihat selengkapnya <i
+                                    class="fas fa-solid fa-angles-down"></i></a>
                         </div>
                     </div>
                 </div>
@@ -177,33 +198,40 @@
             <div class="col-md-6">
                 <div class="card">
                     <div class="card-body text-center">
-                        <h1 class="card-title">Nomor urut 3</h1>
-                        <h2>Naruto Sasuke</h2>
+                        <h1 class="card-title">Nomor urut 4</h1>
+                        <h2>Spombob paterik</h2>
                         <img src="../assets/images/spongbob-patrik.png" alt=""
-                            style="width: 400px; border-radius: 5px" class="shadow-sm paslon-photo" />
-                        <hr />
-                        <div class="fs-3 fw-bold">Visi</div>
-                        <div class="text-center">
-                            Bikini Bottom aman tentram dan asri
-                        </div>
-                        <hr />
-                        <div class="fs-3 fw-bold">Misi</div>
-                        <div class="text-start">
-                            <ol type="1">
-                                <li>Perbaikan aspal perbatasan rock bottom</li>
-                                <li>Peningkatan keamanan sekitar chum bucket</li>
-                                <li>Kaderisasi mermaid-man Barnacle Boy</li>
-                            </ol>
+                            style="width: 400px; border-radius: 5px" class="shadow-sm paslon-photo" id="zoom-default" />
+                        <div class="collapse paslon" id="kolaps4">
+                            <hr />
+                            <div class="fs-3 fw-bold">Visi</div>
+                            <div class="text-center">
+                                Bikini Bottom aman tentram dan asri
+                            </div>
+                            <hr />
+                            <div class="fs-3 fw-bold">Misi</div>
+                            <div class="text-start">
+                                <ol type="1">
+                                    <li>Perbaikan aspal perbatasan rock bottom</li>
+                                    <li>Peningkatan keamanan sekitar chum bucket</li>
+                                    <li>Kaderisasi mermaid-man Barnacle Boy</li>
+                                </ol>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <div class="me-auto p-2 fw-bold">Yakin dengan dia?</div>
+                                <div class="p-2">
+                                    <button class="btn tema-3 coblos" id="coblosButton" value="4">
+                                        Coblos
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="card-footer">
-                        <div class="d-flex align-items-center">
-                            <div class="me-auto p-2 fw-bold">Yakin dengan dia?</div>
-                            <div class="p-2">
-                                <button class="btn tema-3 coblos" id="coblosButton" value="4">
-                                    Coblos
-                                </button>
-                            </div>
+                        <div class="text-center">
+                            <a data-bs-toggle="collapse" class="detail-toggle" href="#kolaps4" role="button"
+                                aria-expanded="false" aria-controls="kolaps4">Lihat selengkapnya <i
+                                    class="fas fa-solid fa-angles-down"></i></a>
                         </div>
                     </div>
                 </div>
@@ -283,5 +311,7 @@
                 }
             );
         });
+
+        const zoomDefault = mediumZoom('#zoom-default');
     </script>
 @endsection
