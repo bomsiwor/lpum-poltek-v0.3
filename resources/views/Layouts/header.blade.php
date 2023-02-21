@@ -31,7 +31,7 @@
                 <!-- ============================================================== -->
                 <!-- Search -->
                 <!-- ============================================================== -->
-                <h4>&#128570; Have a nice day, {{ auth()->user()->nama }}! @hasrole('Admin')
+                <h4>&#128570; Have a nice day, {{ auth()->user()->first_name }}! @hasrole('Admin')
                         - {{ auth()->user()->getRoleNames()[0] }}
                     @endhasrole
                 </h4>

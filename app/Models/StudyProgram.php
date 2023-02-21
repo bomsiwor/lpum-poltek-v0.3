@@ -11,6 +11,10 @@ class StudyProgram extends Model
 
     public $timestamps = false;
 
+    protected $fillable = [
+        'study_program_name'
+    ];
+
     public function user()
     {
         return $this->hasMany(User::class);

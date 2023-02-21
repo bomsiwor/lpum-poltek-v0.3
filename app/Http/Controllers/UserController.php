@@ -19,7 +19,7 @@ class UserController extends Controller
             return response()->json([
                 'data' => $user,
                 'pwd' => $user->password,
-                'prodi' => $user->study_program->nama
+                'prodi' => $user->study_program->study_program_name
             ]);
         endif;
     }

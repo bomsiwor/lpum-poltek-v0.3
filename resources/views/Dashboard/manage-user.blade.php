@@ -78,8 +78,8 @@
                                         <tr>
                                             <td><input type="checkbox" name="bahasa" value="{{ $user->id }}" /></td>
                                             <td>{{ $loop->iteration }}</td>
-                                            <td>{{ $user->nama }}</td>
-                                            <td>{{ $user->study_program->nama }}</td>
+                                            <td>{{ $user->first_name . ' ' . $user->last_name }}</td>
+                                            <td>{{ $user->study_program->study_program_name }}</td>
                                             <td>{{ $user->nim }}</td>
                                             <td>
                                                 @if ($user->vote_status)
@@ -116,6 +116,14 @@
                                 class="mdi mdi-check-decagram"></span> Verify All</button>
                         <button class="btn tema-3 verif-button" value="{{ route('unverify') }}"><span
                                 class="mdi mdi-alert-octagram"></span> unverify all</button>
+                        <button class="btn btn-primary" id="sendEmailButton">
+                            Kirim email</button>
+                        <div id="emailProgress" hidden>
+                            <p class="mb-0 mt-1">Mengirim <span id="countEmail"></span></p>
+                            <p class="animate__animated animate__pulse animate__infinite infinite text-danger">
+                                Jangan di
+                                refresh!</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -137,9 +145,12 @@
                 <div class="modal-body">
                     <form action="" id="modalUser">
                         <div class="mb-3">
-                            <label for="nama" class="form-label">Nama</label>
-                            <input type="text" name="nama" id="nama" class="form form-control"
-                                value="Boma" />
+                            <label for="first_name" class="form-label">Nama Depan</label>
+                            <input type="text" name="first_name" id="first_name" class="form form-control" />
+                        </div>
+                        <div class="mb-3">
+                            <label for="last_name" class="form-label">Nama Belakang</label>
+                            <input type="text" name="last_name" id="last_name" class="form form-control" />
                         </div>
                         <div class="mb-3">
                             <label for="nim" class="form-label">NIM</label>
@@ -279,7 +290,8 @@
                 success: function(response) {
                     var result = response.data;
                     var prodi = response.prodi;
-                    $("#nama").val(response.data.nama);
+                    $("#first_name").val(response.data.first_name);
+                    $("#last_name").val(response.data.last_name);
                     $("#nim").val(response.data.nim);
                     $("#email").val(response.data.email);
                     $("#password").val(response.pwd);

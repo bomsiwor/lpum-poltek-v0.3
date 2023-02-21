@@ -22,7 +22,7 @@ class StudyProgramSeeder extends Seeder
         ];
 
         foreach ($data as $d) :
-            StudyProgram::create(['nama' => $d]);
+            StudyProgram::create(['study_program_name' => $d]);
         endforeach;
     }
 }

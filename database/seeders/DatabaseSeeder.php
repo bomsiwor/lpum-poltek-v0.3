@@ -17,9 +17,9 @@ class DatabaseSeeder extends Seeder
         // \App\Models\User::factory(10)->create();
 
         $this->call([
+            StudyProgramSeeder::class,
             PermissionTableSeeder::class,
             CreateAdminUserSeeder::class,
-            StudyProgramSeeder::class
         ]);
     }
 }

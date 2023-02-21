@@ -39,8 +39,9 @@
                                     height="250" />
                             @endif
 
-                            <h4 class="card-title m-t-10">{{ auth()->user()->nama }}</h4>
-                            <h6 class="card-subtitle">{{ auth()->user()->study_program->nama }}</h6>
+                            <h4 class="card-title m-t-10">{{ auth()->user()->first_name . ' ' . auth()->user()->last_name }}
+                            </h4>
+                            <h6 class="card-subtitle">{{ auth()->user()->study_program->study_program_name }}</h6>
                             <div class="row text-center justify-content-center">
                                 @if (auth()->user()->image)
                                     <div class="col-6">
@@ -99,12 +100,22 @@
                             action="{{ route('change-user-detail') }}" id="profileDetail">
                             @method('PUT')
                             @csrf
-                            <!-- Nama lengkap -->
+                            <!-- Nama Depan -->
                             <div class="form-group">
-                                <label class="col-md-12">Nama Lengkap</label>
+                                <label class="col-md-12">Nama Depan</label>
                                 <div class="col-md-12">
-                                    <input type="text" placeholder="Nama Lengkap" value="{{ auth()->user()->nama }}"
-                                        class="form-control form-control-line formProfil" name="nama" disabled />
+                                    <input type="text" placeholder="Nama Lengkap"
+                                        value="{{ auth()->user()->first_name }}"
+                                        class="form-control form-control-line formProfil" name="first_name" disabled />
+                                </div>
+                            </div>
+                            <!-- Nama Belakang -->
+                            <div class="form-group">
+                                <label class="col-md-12">Nama Belakang</label>
+                                <div class="col-md-12">
+                                    <input type="text" placeholder="Nama Belakang"
+                                        value="{{ auth()->user()->last_name }}"
+                                        class="form-control form-control-line formProfil" name="last_name" disabled />
                                 </div>
                             </div>
                             <!-- Prodi -->
@@ -116,7 +127,8 @@
                                         <option selected value="0">Pilih Prodi</option>
                                         @foreach ($study_programs as $study_program)
                                             <option @if (auth()->user()->study_program_id == $study_program->id) selected @endif
-                                                value="{{ $study_program->id }}">{{ $study_program->nama }}</option>
+                                                value="{{ $study_program->id }}">{{ $study_program->study_program_name }}
+                                            </option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -151,7 +163,8 @@
                             <div class="form-group">
                                 <label class="col-md-12">Phone No</label>
                                 <div class="col-md-12">
-                                    <input type="text" placeholder="Masih kosong..." value="{{ auth()->user()->phone }}"
+                                    <input type="text" placeholder="Masih kosong..."
+                                        value="{{ auth()->user()->phone }}"
                                         class="form-control form-control-line formProfil" disabled name="phone" />
                                 </div>
                             </div>

@@ -53,14 +53,7 @@
                             </div>
                             <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab"
                                 tabindex="0">
-                                <button class="btn btn-primary" id="sendEmailButton">
-                                    Kirim email</button>
-                                <div id="emailProgress" hidden>
-                                    <p class="mb-0 mt-1">Mengirim <span id="countEmail"></span></p>
-                                    <p class="animate__animated animate__pulse animate__infinite infinite text-danger">
-                                        Jangan di
-                                        refresh!</p>
-                                </div>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, illo?
                             </div>
                             <div class="tab-pane fade" id="disabled-tab-pane" role="tabpanel" aria-labelledby="disabled-tab"
                                 tabindex="0">gaada isinya</div>
